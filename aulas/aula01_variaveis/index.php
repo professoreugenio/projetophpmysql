@@ -67,7 +67,7 @@
 
         <tr>
             <td><i class="bi bi-cash-coin"></i> Salário</td>
-            <td><?= $salario??'Não definido' ?></td>
+            <td>R$ <?= $salario??'Não definido' ?></td>
         </tr>
 
         <tr>
