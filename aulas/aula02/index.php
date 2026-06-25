@@ -16,13 +16,65 @@
 </head>
 
 <body>
-    <?php $numaula = "Aula 2"; ?>
+    <?php $numaula = "Aula 2 - Tipagem automática"; ?>
     <?php require_once '../componentes/nav.php'; ?>
     <?php require_once '../componentes/header.php'; ?>
     <main>
         <div class="container">
             <div class="row">
                 <div class="col-12">
+
+                    <?php
+                    $nome = "Paula Lins";
+                    $valor = 100;
+                    $moeda = 15.59;
+                    $status = true;
+                    $nulo = null;
+
+                    $dados = ["Antônio", 10, 15.25, true];
+                    ?>
+
+                    <p>
+                        Nome: <br>
+                        <?php var_dump($nome); ?>
+                    </p>
+                    <p>
+                        Valor : <br>
+                        <?php var_dump($valor); ?>
+                    </p>
+
+                    <p>
+                        Moeda: <br>
+                        <?php var_dump($moeda); ?>
+                    </p>
+
+                    <p>
+                        Status: <br>
+                        <?php var_dump($status); ?>
+                    </p>
+                    <p>
+                        Nulo: <br>
+                        <?php var_dump($nulo); ?>
+                    </p>
+                    <p>
+                        Array: <br>
+                        <?php var_dump($dados); ?>
+                    </p>
+
+                    <h1>Operadores</h1>
+                    <?php
+                        $valor1 = 1250;
+                        $valor2 = 15;
+
+                    //    number_format($valor1, 2, ',', '.');
+                    ?>
+                    <h3>Soma</h3>
+                    <?php $total = $valor1 + $valor2;     ?>
+                    A soma de <?php echo $valor1;?> 
+                    + <?php echo $valor1;?>  é igual a : 
+                    <?php echo $total;?>
+
+
 
 
                 </div>

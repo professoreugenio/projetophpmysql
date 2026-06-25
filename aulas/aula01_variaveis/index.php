@@ -24,9 +24,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
+                    <h1>Cadastro aluno</h1>
 
                     <?php
-
                     $nome = "Eugênio Márcio";
                     $idade = 55;
                     $profissao = "Instrutor de Programação";
@@ -35,9 +35,6 @@
                     $email = "professoreugeniomls@gmail.com";
                     $celular = "85-99781.0324";
                     $datanascimento = "07-03-1971";
-
-
-
                     ?>
 
 
@@ -52,7 +49,7 @@
     <tbody>
         <tr>
             <td><i class="bi bi-person-fill"></i> Nome</td>
-            <td><?= $nome??'Não definido' ?></td>
+            <td><?= $nome??'Não definido';?></td>
         </tr>
 
         <tr>
@@ -91,6 +88,44 @@
         </tr>
     </tbody>
 </table>
+
+<h1>Desafio 2 Cadastro simples de produto</h1>
+
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th style="width:250px">Produto</th>
+                <th>Categoria</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>dados</td>
+                <td>dados</td>
+               
+            </tr>   
+            <tr>
+                <td>dados</td>
+                <td>dados</td>
+               
+            </tr>  
+            <tr>
+                <td>dados</td>
+                <td>dados</td>
+               
+            </tr> 
+            <tr>
+                <td>dados</td>
+                <td>dados</td>
+               
+            </tr>  
+        </tbody>
+    </table>
+</div>
+
+
 
 
                 </div>

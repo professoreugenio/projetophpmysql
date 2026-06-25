@@ -90,6 +90,15 @@
                         </ul>
                     </li>
 
+                    <li class="nav-item">
+                        <a href="aulas/aula01_variaveis/" class="nav-link" >
+                            Aulas
+                        </a>
+                        
+                    </li>
+                    
+
+
                 </ul>
             </div>
         </div>

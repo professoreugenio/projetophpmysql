@@ -20,12 +20,14 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="produtosDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
-                            Aula
+                            Aulas
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="produtosDropdown">
                             <li><a class="dropdown-item" href="../aula01_variaveis/">Aula 1 - Variáveis</a></li>
-                            <li><a class="dropdown-item" href="../aula02/">Aula 2 - Tipos de dados </a></li>
+                            <li><a class="dropdown-item" href="../aula02/">Aula 2 - Operadores</a></li>
                             <li><a class="dropdown-item" href="../aula03/">Aula 3 - </a></li>
+                            <li><a class="dropdown-item" href="../aula04/">Aula 4 - </a></li>
+                            <li><a class="dropdown-item" href="../aula05/">Aula 5 - </a></li>
                         </ul>
                     </li>
 
