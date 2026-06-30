@@ -63,16 +63,44 @@
 
                     <h1>Operadores</h1>
                     <?php
-                        $valor1 = 1250;
-                        $valor2 = 15;
+                    $valor1 = 1250;
+                    $valor2 = 15;
 
                     //    number_format($valor1, 2, ',', '.');
                     ?>
                     <h3>Soma</h3>
                     <?php $total = $valor1 + $valor2;     ?>
-                    A soma de <?php echo $valor1;?> 
-                    + <?php echo $valor1;?>  é igual a : 
-                    <?php echo $total;?>
+                    A soma de <?php echo $valor1; ?>
+                    + <?php echo $valor1; ?> é igual a :
+                    <?php echo $total; ?>
+
+                    <h3>Multiplicação</h3>
+                    <?php
+                    $produto ="GELADEIRA";
+                    $precounitario = 2850;
+                    $quantidade = 3;
+
+                    $total = $precounitario * $quantidade;
+
+                    ?>
+
+                    <p>
+                        O produto <?php echo $produto;?> <br>
+                        Preço unitário : <?php echo $precounitario;?><br>
+                        Quantidade: <?php echo $quantidade;?><br>
+                        Total da Venda: R$ <?php echo $total;?>
+                    </p>
+
+
+
+                    <h3>Multiplicação</h3>
+                    <p>Aqui as operações</p>
+
+
+                    <h3>Divisão</h3>
+                    <p>Aqui as operações</p>
+
+
 
 
 

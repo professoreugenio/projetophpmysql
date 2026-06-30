@@ -2,8 +2,8 @@
         <div class="container">
 
             <!-- Nome do projeto à esquerda -->
-            <a class="navbar-brand fw-bold" href="index.html">
-                Controle de Estoque
+            <a class="navbar-brand fw-bold" href="../../">
+                Controle de Estoque*
             </a>
 
             <!-- Botão do menu mobile -->
@@ -25,8 +25,8 @@
                         <ul class="dropdown-menu" aria-labelledby="produtosDropdown">
                             <li><a class="dropdown-item" href="../aula01_variaveis/">Aula 1 - Variáveis</a></li>
                             <li><a class="dropdown-item" href="../aula02/">Aula 2 - Operadores</a></li>
-                            <li><a class="dropdown-item" href="../aula03/">Aula 3 - </a></li>
-                            <li><a class="dropdown-item" href="../aula04/">Aula 4 - </a></li>
+                            <li><a class="dropdown-item" href="../aula03/">Aula 3 - Rotas</a></li>
+                            <li><a class="dropdown-item" href="../aula04/">Aula 4 - Condicional if</a></li>
                             <li><a class="dropdown-item" href="../aula05/">Aula 5 - </a></li>
                         </ul>
                     </li>

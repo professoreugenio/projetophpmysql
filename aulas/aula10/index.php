@@ -1,4 +1,4 @@
-<?php require_once dirname(__DIR__). '/componentes/rotas.php';?>
+<?php require_once dirname(__DIR__) . '/componentes/rotas.php'; ?>
 <!doctype html>
 <html lang="en" data-bs-theme="light">
 
@@ -17,39 +17,22 @@
 </head>
 
 <body>
-    <?php $numaula = "Aula 3-ROTAS (caminhos)"; ?>
-    <?php require_once APP_COMPONENTES. '/nav.php'; ?>
-    <?php require_once APP_COMPONENTES. '/header.php'; ?>
+    <?php $numaula = "Aula 4"; ?>
+    <?php require_once APP_COMPONENTES . '/nav.php'; ?>
+    <?php require_once APP_COMPONENTES . '/header.php'; ?>
     <main>
         <div class="container">
             <div class="row">
                 <div class="col-12">
-
-                    <h3> __DIR__ Caminho absoluto</h3>
-                   
-                    <?= __DIR__;?>
-
-                    <h3> dirname(__DIR__) recua um diretório</h3>
-
-                    <?= dirname(__DIR__); ?>
                     
-                    <h3> dirname(__DIR__,2)</h3>
-                    
-                    <?= dirname(__DIR__,2); ?>
 
-                    <h3>Definindo variável de rotas</h3>
-                    <h4>define("APP_ROOT", __DIR__)</h4>
-                    <?php define("APP_ROOT", __DIR__);?>
-                    <?= APP_ROOT;?>
-
-                    <h3>ROTA ABSOLUTA</h3>
-                    
                 </div>
             </div>
         </div>
     </main>
 
-    <?php require_once APP_COMPONENTES. '/footer.php'; ?>
+    <?php require_once APP_COMPONENTES . '/footer.php'; ?>
+
     <!-- Bootstrap JavaScript Bundle (includes Popper) -->
     <script
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
