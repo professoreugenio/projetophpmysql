@@ -96,14 +96,47 @@
 
                     ?>
 
-                    <h4>if e else if</h4>
+                    <h4>Analisando a média</h4>
 
-                    <?php
+                    <a href="?media=3" class="btn btn-danger btn-sm">Média 3</a>
+                    <a href="?media=5" class="btn btn-warning btn-sm">Média 5</a>
+                    <a href="?media=8" class="btn btn-success btn-sm">Média 8</a>
+                    <a href="?" class="btn btn-default btn-sm">Limpar</a>
+                    <p>
+                        <?php
 
-                    
+                        $media = "";
+
+                        if (!empty($_GET['media'])) {
+
+                            $media = $_GET['media'];
+                            if ($media >= 7) {
+
+                                echo ('<div class="alert alert-success" role="alert">
+                                NOTA '.$media.' :Aprovado com sucesso!
+                                </div>
+                                ');
+                            } else if ($media >= 4 && $media != "") {
+
+                                echo ('<div class="alert alert-warning" role="alert">
+                                NOTA '.$media.' :ALUNO EM RECUPERAÇÃO.
+                                </div>
+                                ');
+                            } else {
+
+                                echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                NOTA '.$media.' :ALUNO REPROVADO
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                                </div>
+                                ';
+                            }
+                        }
 
 
-                    ?>
+
+                        ?>
+                    </p>
+
 
 
                 </div>
