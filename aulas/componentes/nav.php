@@ -27,7 +27,8 @@
                             <li><a class="dropdown-item" href="../aula02/">Aula 2 - Operadores</a></li>
                             <li><a class="dropdown-item" href="../aula03/">Aula 3 - Rotas</a></li>
                             <li><a class="dropdown-item" href="../aula04/">Aula 4 - Condicional if</a></li>
-                            <li><a class="dropdown-item" href="../aula05/">Aula 5 - </a></li>
+                            <li><a class="dropdown-item" href="../aula05/">Aula 5 - For While </a></li>
+                            <li><a class="dropdown-item" href="../aula06/">Aula 6 - Array</a></li>
                         </ul>
                     </li>
 
