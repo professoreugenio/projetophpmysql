@@ -1,3 +1,4 @@
+<?php require_once __DIR__ . '/componentes/config.php' ?>
 <?php require_once __DIR__ . '/componentes/rotas.php' ?>
 <!doctype html>
 <html lang="pt-br" data-bs-theme="light">
@@ -19,161 +20,11 @@
 <body>
 
     <!-- ========== NAVBAR ========== -->
-    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom sticky-top">
-        <div class="container">
-            <a class="navbar-brand navbar-brand-custom d-flex align-items-center gap-2" href="index.html">
-                <i class="bi bi-box-seam fs-4"></i>
-                <span>Controle de Estoque</span>
-            </a>
-
-            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="menuPrincipal">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center gap-lg-1">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link nav-link-custom dropdown-toggle" href="#" data-bs-toggle="dropdown">
-                            <i class="bi bi-box me-1"></i> Produtos
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-dark-custom">
-                            <li><a class="dropdown-item dropdown-item-custom" href="#"><i class="bi bi-list-ul me-2"></i>Listar Produtos</a></li>
-                            <li><a class="dropdown-item dropdown-item-custom" href="#"><i class="bi bi-plus-circle me-2"></i>Cadastrar Produto</a></li>
-                            <li>
-                                <hr class="dropdown-divider dropdown-divider-custom">
-                            </li>
-                            <li><a class="dropdown-item dropdown-item-custom" href="#"><i class="bi bi-tags me-2"></i>Categorias</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link nav-link-custom dropdown-toggle" href="#" data-bs-toggle="dropdown">
-                            <i class="bi bi-people me-1"></i> Clientes
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-dark-custom">
-                            <li><a class="dropdown-item dropdown-item-custom" href="#"><i class="bi bi-list-ul me-2"></i>Listar Clientes</a></li>
-                            <li><a class="dropdown-item dropdown-item-custom" href="#"><i class="bi bi-person-plus me-2"></i>Cadastrar Cliente</a></li>
-                            <li>
-                                <hr class="dropdown-divider dropdown-divider-custom">
-                            </li>
-                            <li><a class="dropdown-item dropdown-item-custom" href="#"><i class="bi bi-clock-history me-2"></i>Histórico</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link nav-link-custom dropdown-toggle" href="#" data-bs-toggle="dropdown">
-                            <i class="bi bi-graph-up me-1"></i> Relatórios
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-dark-custom">
-                            <li><a class="dropdown-item dropdown-item-custom" href="#"><i class="bi bi-box-seam me-2"></i>Estoque Atual</a></li>
-                            <li><a class="dropdown-item dropdown-item-custom" href="#"><i class="bi bi-exclamation-triangle me-2"></i>Em Falta</a></li>
-                            <li><a class="dropdown-item dropdown-item-custom" href="#"><i class="bi bi-arrow-left-right me-2"></i>Movimentações</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a href="aulas/aula01_variaveis/" class="nav-link nav-link-custom">
-                            <i class="bi bi-mortarboard me-1"></i> Aulas
-                        </a>
-                    </li>
-                    <li class="nav-item ms-lg-2">
-                        <a href="#" class="btn btn-outline-light btn-sm rounded-pill px-3">
-                            <i class="bi bi-box-arrow-right me-1"></i> Sair
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <!-- ========== HEADER HERO ========== -->
-    <header class="header-hero">
-        <div class="header-bg-pattern"></div>
-        <div class="header-glow header-glow-1"></div>
-        <div class="header-glow header-glow-2"></div>
-
-        <div class="container position-relative z-1">
-            <div class="row justify-content-center">
-                <div class="col-lg-8 col-xl-7 text-center">
-
-                    <div class="mb-4">
-                        <span class="badge bg-success bg-opacity-25 text-success border border-success border-opacity-25 rounded-pill px-3 py-2 fw-semibold">
-                            <span class="d-inline-block bg-success rounded-circle me-2" style="width: 8px; height: 8px;"></span>
-                            Sistema Online
-                        </span>
-                    </div>
-
-                    <h1 class="display-4 fw-bold text-white mb-3 lh-sm">
-                        Sistema de <span class="text-gradient">Controle de Estoque</span>
-                    </h1>
-
-                    <p class="lead text-white-50 mb-4 mx-auto" style="max-width: 600px;">
-                        Gerencie produtos, clientes e relatórios de forma simples, organizada e eficiente.
-                    </p>
-
-                    <div class="d-flex flex-wrap justify-content-center gap-3 mb-5">
-                        <a href="#" class="btn btn-primary btn-lg rounded-pill px-4 fw-semibold shadow">
-                            <i class="bi bi-plus-lg me-2"></i>Novo Produto
-                        </a>
-                        <a href="#" class="btn btn-outline-light btn-lg rounded-pill px-4 fw-semibold">
-                            <i class="bi bi-bar-chart-line me-2"></i>Ver Relatórios
-                        </a>
-                    </div>
-
-                    <div class="row g-3 justify-content-center">
-                        <div class="col-6 col-md-3">
-                            <div class="card stat-card border-0 rounded-4">
-                                <div class="card-body py-3">
-                                    <div class="d-flex align-items-center justify-content-center gap-2 mb-1">
-                                        <i class="bi bi-box-seam text-info fs-5"></i>
-                                        <span class="fw-bold fs-4 text-white">1.247</span>
-                                    </div>
-                                    <small class="text-white-50">Produtos</small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6 col-md-3">
-                            <div class="card stat-card border-0 rounded-4">
-                                <div class="card-body py-3">
-                                    <div class="d-flex align-items-center justify-content-center gap-2 mb-1">
-                                        <i class="bi bi-people text-warning fs-5"></i>
-                                        <span class="fw-bold fs-4 text-white">342</span>
-                                    </div>
-                                    <small class="text-white-50">Clientes</small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6 col-md-3">
-                            <div class="card stat-card border-0 rounded-4">
-                                <div class="card-body py-3">
-                                    <div class="d-flex align-items-center justify-content-center gap-2 mb-1">
-                                        <i class="bi bi-exclamation-circle text-danger fs-5"></i>
-                                        <span class="fw-bold fs-4 text-white">18</span>
-                                    </div>
-                                    <small class="text-white-50">Em Falta</small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6 col-md-3">
-                            <div class="card stat-card border-0 rounded-4">
-                                <div class="card-body py-3">
-                                    <div class="d-flex align-items-center justify-content-center gap-2 mb-1">
-                                        <i class="bi bi-currency-dollar text-success fs-5"></i>
-                                        <span class="fw-bold fs-4 text-white">R$ 45K</span>
-                                    </div>
-                                    <small class="text-white-50">Valor Total</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-        <div class="header-wave">
-            <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0 120L60 105C120 90 240 60 360 52.5C480 45 600 60 720 67.5C840 75 960 75 1080 67.5C1200 60 1320 45 1380 37.5L1440 30V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="#f1f5f9" />
-            </svg>
-        </div>
-    </header>
+   <?php require_once APP_COMPONENTES.'/nav.php';?>
+   
+   <!-- ========== HEADER HERO ========== -->
+   <?php require_once APP_COMPONENTES.'/header.php';?>
+    
 
     <!-- ========== CARDS DE AÇÃO ========== -->
     <section class="container my-5">
@@ -403,54 +254,8 @@
     </main>
 
     <!-- ========== FOOTER ========== -->
-    <footer class="footer-main">
-        <div class="footer-top-line"></div>
-        <div class="container">
-            <div class="py-5">
-                <div class="row g-4 align-items-center">
-                    <div class="col-lg-4 text-lg-start text-center">
-                        <a href="index.html" class="d-inline-flex align-items-center gap-2 text-decoration-none">
-                            <i class="bi bi-box-seam text-primary fs-4"></i>
-                            <span class="fw-bold fs-5 text-white">Controle de Estoque</span>
-                        </a>
-                        <p class="text-secondary mt-2 mb-0 small">
-                            Simplificando a gestão do seu negócio.
-                        </p>
-                    </div>
-                    <div class="col-lg-4 text-center">
-                        <div class="d-flex flex-wrap justify-content-center gap-3">
-                            <a href="#" class="footer-link">Produtos</a>
-                            <a href="#" class="footer-link">Clientes</a>
-                            <a href="#" class="footer-link">Relatórios</a>
-                            <a href="#" class="footer-link">Suporte</a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 text-lg-end text-center">
-                        <div class="d-flex justify-content-lg-end justify-content-center gap-2 mb-2">
-                            <a href="#" class="social-btn" aria-label="GitHub"><i class="bi bi-github"></i></a>
-                            <a href="#" class="social-btn" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
-                            <a href="#" class="social-btn" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-                        </div>
-                        <span class="badge bg-dark border border-secondary text-secondary small">v1.0.0</span>
-                    </div>
-                </div>
-                <hr class="footer-divider my-4">
-                <div class="row align-items-center">
-                    <div class="col-md-6 text-md-start text-center">
-                        <p class="mb-0 text-secondary small">
-                            &copy; 2026 <strong class="text-white-50">Controle de Estoque</strong>. Todos os direitos reservados.
-                        </p>
-                    </div>
-                    <div class="col-md-6 text-md-end text-center mt-2 mt-md-0">
-                        <p class="mb-0 text-secondary small">
-                            Desenvolvido com <i class="bi bi-heart-fill text-danger small"></i> por <a href="#" class="text-decoration-none text-white-50">Sua Empresa</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-
+   
+       <?php require_once APP_COMPONENTES.'/footer.php';?>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>

@@ -29,6 +29,7 @@
                             <li><a class="dropdown-item" href="../aula04/">Aula 4 - Condicional if</a></li>
                             <li><a class="dropdown-item" href="../aula05/">Aula 5 - For While </a></li>
                             <li><a class="dropdown-item" href="../aula06/">Aula 6 - Array</a></li>
+                            <li><a class="dropdown-item" href="../aula07/">Aula 7 - Config</a></li>
                         </ul>
                     </li>
 
