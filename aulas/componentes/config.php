@@ -155,13 +155,13 @@ function gerachave()
 {
     $min = "1";
     $max = "10";
-    $count = 5;
+    $count = 10;
 
     $list = range($min, $max);
     shuffle($list);
     $list = array_slice($list, 0, $count);
 
-    $length = 5;
+    $length = 520;
 
     $list1 = array_merge(range('A', 'Z'), range(0, 3));
     shuffle($list1);
@@ -250,4 +250,26 @@ $chave = gerarChaveUnica();
 
 
 
+?>
+
+<?php
+function pegarIp(): string
+{
+    $keys = [
+        'HTTP_CF_CONNECTING_IP',
+        'HTTP_X_FORWARDED_FOR',
+        'REMOTE_ADDR'
+    ];
+    foreach ($keys as $key) {
+        if (!empty($_SERVER[$key])) {
+            $ip = trim((string) $_SERVER[$key]);
+            if ($key === 'HTTP_X_FORWARDED_FOR') {
+                $partes = explode(',', $ip);
+                $ip = trim($partes[0]);
+            }
+            return mb_substr($ip, 0, 45, 'UTF-8');
+        }
+    }
+    return 'IP não identificado';
+}
 ?>
