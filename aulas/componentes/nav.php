@@ -30,6 +30,7 @@
                             <li><a class="dropdown-item" href="../aula05/">Aula 5 - For While </a></li>
                             <li><a class="dropdown-item" href="../aula06/">Aula 6 - Array</a></li>
                             <li><a class="dropdown-item" href="../aula07/">Aula 7 - Config</a></li>
+                            <li><a class="dropdown-item" href="../aula08/">Aula 8 - $_SESSION</a></li>
                         </ul>
                     </li>
 
