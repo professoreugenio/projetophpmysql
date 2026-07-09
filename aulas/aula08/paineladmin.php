@@ -1,12 +1,22 @@
 <?php require_once dirname(__DIR__) . '/componentes/config.php'; ?>
 <?php
 
-if(empty($_SESSION['userstatus'])) {
+if (!empty($_GET['logout']) && $_GET['logout'] == "ok") {
+
+    $_SESSION = [];
+    session_destroy();  
+    header('Location:paineladmin.php');
+    exit();
+    
+}
+
+if (empty($_SESSION['userstatus'])) {
     header('Location:index.php');
     exit();
 }
-
 ?>
+
+
 <!doctype html>
 <html lang="pt-br">
 
@@ -89,6 +99,26 @@ if(empty($_SESSION['userstatus'])) {
 
 <body>
 
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Deseja realmente encerrar a sessão?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <a href="?logout=ok" class="btn btn-primary">Confirmar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="container-fluid">
         <div class="row">
 
@@ -146,7 +176,7 @@ if(empty($_SESSION['userstatus'])) {
                         </li>
 
                         <li class="nav-item mt-4">
-                            <a href="login.html" class="nav-link text-danger">
+                            <a href="#" class="nav-link text-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                 <i class="bi bi-box-arrow-right"></i>
                                 Sair
                             </a>
