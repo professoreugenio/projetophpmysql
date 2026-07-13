@@ -34,8 +34,8 @@
             
             <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-4">
                 <div>
-                    <h2 class="fw-bold mb-1">Produtos</h2>
-                    <p class="text-muted mb-2">Lista de produtos</p>
+                    <h2 class="fw-bold mb-1">Nova categoria</h2>
+                    <p class="text-muted mb-2">...</p>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb mb-0">
                             <li class="breadcrumb-item"><a href="#" class="text-decoration-none">Home</a></li>
@@ -45,15 +45,15 @@
                 </div>
                 <div class="mt-3 mt-md-0 d-flex flex-wrap gap-2 align-items-center">
                     <span class="text-muted me-3 d-none d-lg-inline" id="currentDate"><i class="bi bi-calendar3 me-1"></i>--/--/----</span>
-                    <a href="produtos_cadastro.php" class="btn btn-primary shadow-sm" >
+                    <button class="btn btn-primary shadow-sm" data-bs-toggle="modal" data-bs-target="#modalNovoProduto">
                         <i class="bi bi-plus-lg me-1"></i> Novo Produto
-                    </a>
-                    <a href="estoque_entrada.php" class="btn btn-success shadow-sm">
+                    </button>
+                    <button class="btn btn-success shadow-sm" data-bs-toggle="modal" data-bs-target="#modalEntrada">
                         <i class="bi bi-box-arrow-in-right me-1"></i> Registrar Entrada
-                    </a>
-                    <a href="estoque_saida.php" class="btn btn-danger shadow-sm" data-bs-toggle="modal" data-bs-target="#modalSaida">
+                    </button>
+                    <button class="btn btn-danger shadow-sm" data-bs-toggle="modal" data-bs-target="#modalSaida">
                         <i class="bi bi-box-arrow-left me-1"></i> Registrar Saída
-                    </a>
+                    </button>
                 </div>
             </div>
 

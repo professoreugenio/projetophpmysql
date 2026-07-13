@@ -1,4 +1,5 @@
-<!doctype html>
+
+<?php require_once 'componentes/config.php'; ?><!doctype html>
 <html lang="pt-BR">
 
 <head>

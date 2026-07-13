@@ -34,8 +34,8 @@
             
             <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-4">
                 <div>
-                    <h2 class="fw-bold mb-1">Produtos</h2>
-                    <p class="text-muted mb-2">Lista de produtos</p>
+                    <h2 class="fw-bold mb-1">Estoque</h2>
+                    <p class="text-muted mb-2">...</p>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb mb-0">
                             <li class="breadcrumb-item"><a href="#" class="text-decoration-none">Home</a></li>
