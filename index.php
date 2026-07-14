@@ -1,5 +1,14 @@
+<?php require_once 'componentes/config.php'; ?>
 
-<?php require_once 'componentes/config.php'; ?><!doctype html>
+<?php
+
+if(!empty($_SESSION['adminstatus'])) {
+    header('Location: admin/');
+    exit();
+}
+
+?>
+<!doctype html>
 <html lang="pt-BR">
 
 <head>
@@ -187,16 +196,12 @@
             padding: 40px 20px;
             overflow: hidden;
             background:
-                radial-gradient(
-                    circle at top left,
+                radial-gradient(circle at top left,
                     rgba(13, 110, 253, 0.20),
-                    transparent 35%
-                ),
-                radial-gradient(
-                    circle at bottom right,
+                    transparent 35%),
+                radial-gradient(circle at bottom right,
                     rgba(32, 201, 151, 0.16),
-                    transparent 35%
-                ),
+                    transparent 35%),
                 linear-gradient(135deg, #f8fbff 0%, #eaf2ff 100%);
         }
 
@@ -259,11 +264,9 @@
             overflow: hidden;
             color: #ffffff;
             background:
-                linear-gradient(
-                    145deg,
+                linear-gradient(145deg,
                     rgba(6, 67, 154, 0.98),
-                    rgba(13, 110, 253, 0.93)
-                );
+                    rgba(13, 110, 253, 0.93));
         }
 
         .brand-panel::before {
@@ -555,11 +558,9 @@
             font-weight: 700;
             color: #ffffff;
             background:
-                linear-gradient(
-                    135deg,
+                linear-gradient(135deg,
                     var(--primary-color),
-                    #0759d4
-                );
+                    #0759d4);
             border: 0;
             border-radius: 13px;
             box-shadow: 0 12px 25px rgba(13, 110, 253, 0.22);
@@ -577,12 +578,10 @@
             height: 200%;
             content: "";
             background:
-                linear-gradient(
-                    90deg,
+                linear-gradient(90deg,
                     transparent,
                     rgba(255, 255, 255, 0.30),
-                    transparent
-                );
+                    transparent);
             transform: rotate(20deg);
             transition: left 0.6s ease;
         }
@@ -752,6 +751,7 @@
 
         /* Reduz animações conforme preferência do usuário */
         @media (prefers-reduced-motion: reduce) {
+
             *,
             *::before,
             *::after {
@@ -884,21 +884,21 @@
                         Altere login.php para o endereço responsável
                         por processar a autenticação no servidor.
                     -->
+                    <div id="mensagemLogin" class="alert d-none"></div>
                     <form
                         id="formLogin"
-                        action="login.php"
                         method="post"
                         autocomplete="on"
                         novalidate>
 
                         <!-- Em uma versão PHP, adicione aqui um token CSRF. -->
 
-                        <div
+                        <!-- <div
                             id="mensagemFormulario"
                             class="alert alert-danger d-none"
                             role="alert"
                             aria-live="assertive">
-                        </div>
+                        </div> -->
 
                         <!-- Campo de e-mail -->
                         <div class="mb-4">
@@ -1098,19 +1098,19 @@
             botaoAlternarSenha.addEventListener("click", () => {
                 const senhaEstaVisivel = campoSenha.type === "text";
 
-                campoSenha.type = senhaEstaVisivel
-                    ? "password"
-                    : "text";
+                campoSenha.type = senhaEstaVisivel ?
+                    "password" :
+                    "text";
 
-                iconeSenha.className = senhaEstaVisivel
-                    ? "bi bi-eye"
-                    : "bi bi-eye-slash";
+                iconeSenha.className = senhaEstaVisivel ?
+                    "bi bi-eye" :
+                    "bi bi-eye-slash";
 
                 botaoAlternarSenha.setAttribute(
                     "aria-label",
-                    senhaEstaVisivel
-                        ? "Exibir senha"
-                        : "Ocultar senha"
+                    senhaEstaVisivel ?
+                    "Exibir senha" :
+                    "Ocultar senha"
                 );
 
                 botaoAlternarSenha.setAttribute(
@@ -1202,6 +1202,72 @@
             });
         })();
     </script>
+
+    <script>
+        const formLogin = document.getElementById('formLogin');
+        const mensagemLogin = document.getElementById('mensagemLogin');
+        const btnEntrar = document.getElementById('botaoEntrar');
+
+        formLogin.addEventListener('submit', async function(event) {
+            event.preventDefault();
+
+            limparMensagem();
+
+            const dadosFormulario = new FormData(formLogin);
+
+            btnEntrar.disabled = true;
+            btnEntrar.textContent = 'Verificando...';
+
+            try {
+                const resposta = await fetch(
+                    'componentes/loginUsuario.php', {
+                        method: 'POST',
+                        body: dadosFormulario,
+                        headers: {
+                            'X-Requested-With': 'XMLHttpRequest'
+                        }
+                    }
+                );
+
+                const dados = await resposta.json();
+
+                if (!resposta.ok || dados.sucesso !== true) {
+                    throw new Error(
+                        dados.mensagem || 'Não foi possível realizar o login.'
+                    );
+                }
+
+                exibirMensagem(dados.mensagem, 'success');
+
+                window.location.href =
+                    dados.redirecionar || 'admin/index.php';
+
+            } catch (erro) {
+                exibirMensagem(erro.message, 'danger');
+
+                document.getElementById('senha').value = '';
+                document.getElementById('senha').focus();
+
+            } finally {
+                btnEntrar.disabled = false;
+                btnEntrar.textContent = 'Entrar';
+            }
+        });
+
+        function exibirMensagem(texto, tipo) {
+            mensagemLogin.textContent = texto;
+            mensagemLogin.className = `alert alert-${tipo}`;
+        }
+
+        function limparMensagem() {
+            mensagemLogin.textContent = '';
+            mensagemLogin.className = 'alert d-none';
+        }
+    </script>
+
+
+
+
 </body>
 
 </html>
