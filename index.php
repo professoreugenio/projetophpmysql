@@ -1,5 +1,5 @@
 <?php require_once 'componentes/config.php'; ?>
-
+<?php require_once 'componentes/conexao.php'; ?>
 <?php
 
 if(!empty($_SESSION['adminstatus'])) {
@@ -1047,6 +1047,8 @@ if(!empty($_SESSION['adminstatus'])) {
             </article>
         </section>
     </main>
+
+   
 
     <footer class="system-footer">
         <p>

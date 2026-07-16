@@ -255,7 +255,8 @@ $chave = gerarChaveUnica();
 
 <?php
 
-// $con = config::connect();
-
-
+if (!isset($_SESSION['adminstatus']) || $_SESSION['adminstatus'] !== true) {
+    header('Location: ../index.php');
+    exit;
+}
 ?>
